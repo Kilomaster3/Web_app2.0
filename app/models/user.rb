@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  devise :omniauthable, omniauth_providers: [:facebook]
+  devise :omniauthable, omniauth_providers: [:facebook, :linkedin]
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -22,4 +22,14 @@ class User < ApplicationRecord
       user.image = auth.info.image # assuming the user model has an image
     end
   end
+end
+
+def self.connect_to_linkedin(auth, _signed_in_resource = nil)
+  user = User.where(provider: auth.provider, uid: auth.uid).first
+  if user
+    user
+  else
+    registered_user = User.where(email: auth.info.email).first
+    registered_user || user = User.create(name: auth.info.first_name, provider: auth.provider, uid: auth.uid, email: auth.info.email, password: Devise.friendly_token[0, 20])
+ end
 end

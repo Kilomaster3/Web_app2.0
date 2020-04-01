@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get '/auth/facebook/callback' => 'users/omniauth_callbacks#facebook'
+    get '/auth/linkedin/callback' => 'users/omniauth_callbacks#linkedin'
   end
 end
