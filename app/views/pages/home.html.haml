@@ -1,9 +1,5 @@
-- unless current_user
-  = link_to 'Sign in with Facebook', user_facebook_omniauth_authorize_path
+- if current_user
+  = "hi, #{current_user.first_name} #{current_user.last_name}"
 - else
-  = link_to "Logout", destroy_user_session_path, method: :delete
-
-- unless current_user
+  = link_to 'Sign in with Facebook', user_facebook_omniauth_authorize_path   
   = link_to 'Sign in with Linkedin', user_linkedin_omniauth_authorize_path
-- else
-  = link_to "Logout", destroy_user_session_path, method: :delete
