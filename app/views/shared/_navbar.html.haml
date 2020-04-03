@@ -7,6 +7,8 @@
     %span.navbar-text
       - if user_signed_in?
         = link_to "Logout", destroy_user_session_path, method: :delete
+        |
+        = link_to "Setting", edit_account_path(current_user), class: 'btn btn-info'
       - else
         = link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal-lg"}
         |
