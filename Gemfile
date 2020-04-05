@@ -41,6 +41,7 @@ gem 'bootstrap'
 gem 'simple_form'
 gem 'pry-rails', group: :development
 gem 'webpacker'
+gem 'react-rails'
 
 group :development do 
 gem 'rubocop', require: false 

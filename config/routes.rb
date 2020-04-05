@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     get '/auth/facebook/callback' => 'users/omniauth_callbacks#facebook'
     get '/auth/linkedin/callback' => 'users/omniauth_callbacks#linkedin'
 
-    resources :accounts 
+    resources :accounts
   end
 end
