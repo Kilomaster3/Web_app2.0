@@ -40,7 +40,7 @@ gem 'omniauth-oauth2', '1.3.1'
 gem 'bootstrap'
 gem 'simple_form'
 gem 'pry-rails', group: :development
-gem 'webpacker'
+gem 'webpacker' 
 gem 'react-rails'
 
 group :development do 
