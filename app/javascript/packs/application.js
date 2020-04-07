@@ -17,9 +17,10 @@
 
 console.log('Hello World from Webpacker')
 
-import './hello_vue'
-
+import UserForm from './user_form'
 import JQuery from 'jquery';
+import WebpackerReact from 'webpacker-react'
+
 window.$ = window.JQuery = JQuery;
 
 import 'bootstrap'
@@ -28,3 +29,7 @@ import 'bootstrap'
 var componentRequireContext = require.context("components", true);
 var ReactRailsUJS = require("react_ujs");
 ReactRailsUJS.useContext(componentRequireContext);
+
+WebpackerReact.setup({
+  UserForm
+});

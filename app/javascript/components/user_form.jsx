@@ -1,4 +1,3 @@
-import React from 'react'
 class UserForm extends React.Component {
   constructor(props) {
     super(props);
@@ -24,7 +23,6 @@ class UserForm extends React.Component {
           Name:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
-
         <input type="submit" value="Submit" />
       </form>
     );
