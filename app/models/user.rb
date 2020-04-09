@@ -2,9 +2,12 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         authentication_keys: [:username]
 
   devise :omniauthable, omniauth_providers: [:facebook, :linkedin]
+  validates :email, uniqueness: true
+  validates :username, uniqueness: true
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -32,4 +35,11 @@ def self.connect_to_linkedin(auth, _signed_in_resource = nil)
     registered_user = User.where(email: auth.info.email).first
     registered_user || user = User.create(name: auth.info.first_name, provider: auth.provider, uid: auth.uid, email: auth.info.email, password: Devise.friendly_token[0, 20])
  end
+ def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
 end
