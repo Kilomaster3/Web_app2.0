@@ -30,14 +30,14 @@ class UserForm extends React.Component{
       <div>
         <form onSubmit={this.handleSubmit}>
           <Fields
-            text="Введите логин"
+            text="Add login"
             type="text"
             name="login"
             value={login}
             onChange={this.handleChange}
            />
           <Fields
-            text="Введите пароль"
+            text="Add password"
             type="password"
             name= "password"
             value={password}
@@ -45,7 +45,7 @@ class UserForm extends React.Component{
            />
           <MuiThemeProvider>
             <RaiseButtin
-              label="Войти"
+              label="Update"
               fullWidth={true}
               style={style.button}
              >
