@@ -17,7 +17,7 @@
 
 console.log('Hello World from Webpacker')
 
-import UserForm from './user_form'
+import UserForm from '../components/user_form'
 import JQuery from 'jquery';
 import WebpackerReact from 'webpacker-react'
 
