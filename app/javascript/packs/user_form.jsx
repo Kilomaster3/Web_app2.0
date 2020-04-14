@@ -28,25 +28,29 @@ class UserForm extends React.Component {
   }
   render() {
     return (
-        <form onSubmit={this.handleUsernameFormSubmit}>
+      <form onSubmit={this.handleUsernameFormSubmit}>
+        <div>
           <label>
             Name:
             <input type="text" value={this.state.username} onChange={this.handleUsernameChange} />
           </label>
-          <form onSubmit={this.handlePasswordFormSubmit}>
+          <input type="submit" value="Submit" />
+        </div>
+        <div>
           <label>
             Password:
             <input type="text" value={this.state.password} onChange={this.handelPasswordChange} />
           </label>
-          </form>
-          <form onSubmit={this.handlePassword_ConfirmationFormSubmit}>
-            <label>
-            Password_confirmation:
-              <input type="text" value={this.state.password_confirmation} onChange={this.handlePassword_ConfirmationChange} />
-            </label>
-          </form>
           <input type="submit" value="Submit" />
-        </form>
+        </div>
+        <div>
+          <label>
+            Password Confirmation:
+            <input type="text" value={this.state.password_confirmation} onChange={this.handlePassword_ConfirmationChange} />
+          </label>
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
     );
   }
 }
