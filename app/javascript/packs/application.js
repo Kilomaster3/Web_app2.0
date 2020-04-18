@@ -5,7 +5,7 @@
 // that code so it'll be compiled.
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
-// layout file, like app/views/layouts/application.html.erb
+// layout file, like app/views/layouts/application.html.haml
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -14,12 +14,13 @@
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+console.log('Hello World from Webpacker');
 
-console.log('Hello World from Webpacker')
-
-import UserForm from './user_form'
+import UserForm from '../components/userForm';
 import JQuery from 'jquery';
-import WebpackerReact from 'webpacker-react'
+import WebpackerReact from 'webpacker-react';
+import Turbolinks from 'turbolinks'
+Turbolinks.start()
 
 window.$ = window.JQuery = JQuery;
 

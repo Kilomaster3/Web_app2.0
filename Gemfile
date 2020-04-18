@@ -43,7 +43,6 @@ gem 'pry-rails', group: :development
 gem 'webpacker' 
 gem 'react-rails'
 gem 'webpacker-react', '~> 1.0.0.beta.1'
-
 group :development do 
 gem 'rubocop', require: false 
 end 
